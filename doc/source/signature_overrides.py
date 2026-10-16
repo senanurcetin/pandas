@@ -23,6 +23,16 @@ _OFFSET_PARAMETERS = {
         inspect.Parameter.POSITIONAL_OR_KEYWORD,
         default=False,
     ),
+    "week": inspect.Parameter(
+        "week",
+        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        default=0,
+    ),
+    "weekday": inspect.Parameter(
+        "weekday",
+        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        default=0,
+    ),
     "weekmask": inspect.Parameter(
         "weekmask",
         inspect.Parameter.POSITIONAL_OR_KEYWORD,
@@ -78,6 +88,17 @@ _OFFSET_SIGNATURES = {
         "holidays",
         "calendar",
         "offset",
+    ),
+    pd.tseries.offsets.WeekOfMonth: (
+        "n",
+        "normalize",
+        "week",
+        "weekday",
+    ),
+    pd.tseries.offsets.LastWeekOfMonth: (
+        "n",
+        "normalize",
+        "weekday",
     ),
     pd.tseries.offsets.BYearEnd: (
         "n",
